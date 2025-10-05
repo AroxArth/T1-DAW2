@@ -1,10 +1,10 @@
-package com.aron.t1parte2.mcvc_clients;
+package com.aron.springcloud.msvc_items;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class McvcClientsApplicationTests {
+class MsvcItemsApplicationTests {
 
 	@Test
 	void contextLoads() {

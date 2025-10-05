@@ -1,4 +1,4 @@
-package com.aron.t1parte2.mcvc_clients.client;
+package com.aron.springcloud.msvc_items.client;
 
 import java.util.List;
 
@@ -7,10 +7,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.aron.t1parte2.mcvc_clients.model.User;
+import com.aron.springcloud.msvc_items.model.User;
 
 @FeignClient(name = "msvc-users")
-public interface UserFeignClient {
+public interface ClienteFeignClient {
 
     @GetMapping("/api/users")
     public ResponseEntity<List<User>> list();

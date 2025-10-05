@@ -1,4 +1,4 @@
-package com.aron.t1parte2.mcvc_clients.controller;
+package com.aron.springcloud.msvc_items.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,27 +10,27 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.aron.t1parte2.mcvc_clients.model.Clientes;
-import com.aron.t1parte2.mcvc_clients.service.ClienteService;
+import com.aron.springcloud.msvc_items.model.Cliente;
+import com.aron.springcloud.msvc_items.service.ClienteService;
 
 @RestController
-@RequestMapping("/api/clientes")
+@RequestMapping("/api/items")
 public class ClienteController {
 
     @Autowired
-    private ClienteService clienteService;
+    private ClienteService itemService;
 
     @GetMapping
-    public ResponseEntity<List<Clientes>> list(){
+    public ResponseEntity<List<Cliente>> list(){
 
-        return ResponseEntity.ok(clienteService.findAll());
+        return ResponseEntity.ok(itemService.findAll());
 
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Clientes> detail(@PathVariable Long id){
-
-        Optional<Clientes> optional = clienteService.findById(id);
+    public ResponseEntity<Cliente> detail(@PathVariable Long id){
+        
+        Optional<Cliente> optional = itemService.findById(id);
 
         if (optional.isPresent()) {
             return ResponseEntity.ok(optional.get());
